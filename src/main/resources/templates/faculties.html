@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculties</title>
+</head>
+<body>
+    <form action="add_faculty" method="post">
+        <label for="fname">Faculty</label>
+        <input id="fname" type="text" name="faculty" placeholder="Faculty Name"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Faculty</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each="faculty : ${faculties}">
+                <td th:text="${faculty.id}"></td>
+                <td th:text="${faculty.name}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
